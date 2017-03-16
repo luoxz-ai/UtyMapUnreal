@@ -1,0 +1,10 @@
+canvas|z16 {
+    layer-priority: drive,pedestrian,bridge,water;
+}
+
+@import url("default.z16-poi.mapcss");
+@import url("default.z16-terrain.mapcss");
+@import url("default.z16-roads.mapcss");
+@import url("default.z16-water.mapcss");
+@import url("default.z16-buildings.mapcss");
+@import url("default.z16-misc.mapcss");

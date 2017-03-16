@@ -1,0 +1,55 @@
+canvas|z14 {
+    drive-mesh-name: terrain_drive;
+    drive-max-area: 0%;
+    drive-color-noise-freq: 0;
+    drive-ele-noise-freq: 0;
+    drive-color: gradient(#4d4d4d);
+    drive-texture-index: 0;
+    drive-texture-type: drive;
+    drive-texture-scale: 100;
+}
+
+way,relation|z14[kind_detail=tertiary],
+way,relation|z14[kind_detail=tertiary_link],
+way,relation|z14[kind_detail=residential],
+way,relation|z14[kind_detail=service],
+way,relation|z14[kind_detail=unclassified],
+way,relation|z14[kind_detail=road],
+way,relation|z14[kind_detail=living_street],
+way,relation|z14[kind_detail=trunk],
+way,relation|z14[kind_detail=trunk_link],
+way,relation|z14[kind_detail=primary],
+way,relation|z14[kind_detail=primary_link],
+way,relation|z14[kind_detail=motorway],
+way,relation|z14[kind_detail=motorway_link],
+
+way,relation|z14[highway=tertiary],
+way,relation|z14[highway=tertiary_link],
+way,relation|z14[highway=residential],
+way,relation|z14[highway=service],
+way,relation|z14[highway=unclassified],
+way,relation|z14[highway=road],
+way,relation|z14[feature=roads],
+way,relation|z14[highway=living_street],
+way,relation|z14[highway=trunk],
+way,relation|z14[highway=trunk_link],
+way,relation|z14[highway=primary],
+way,relation|z14[highway=primary_link],
+way,relation|z14[highway=motorway],
+way,relation|z14[highway=motorway_link] {
+    clip:true;
+    builders: terrain;
+    terrain-layer: drive;
+    width: 0.2%;
+}
+
+way,relation|z14[kind_detail=secondary],
+way,relation|z14[kind_detail=secondary_link],
+
+way,relation|z14[highway=secondary],
+way,relation|z14[highway=secondary_link] {
+    clip:true;
+    builders: terrain;
+    terrain-layer: drive;
+    width: 0.1%;
+}

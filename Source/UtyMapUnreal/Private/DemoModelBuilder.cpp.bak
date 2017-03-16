@@ -1,0 +1,108 @@
+#include "UtyMapUnreal.h"
+#include "DemoModelBuilder.h"
+#include "MapTileAdapter.h"
+#include "RuntimeMeshComponent.h"
+
+ADemoModelBuilder::ADemoModelBuilder()
+{
+ 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	PrimaryActorTick.bCanEverTick = true;
+
+	_placeElementBuilder = CreateDefaultSubobject<APlaceElementBuilder>(TEXT("PlaceElementBuilder"));
+	_customizationService = CreateDefaultSubobject<UCustomizationService>(TEXT("MaterialLoadingService"));
+}
+
+void ADemoModelBuilder::BeginPlay()
+{
+	Super::BeginPlay();
+}
+
+void ADemoModelBuilder::Tick( float DeltaTime )
+{
+	Super::Tick( DeltaTime );
+}
+
+void ADemoModelBuilder::BuildElement(ATile* tile, FElement& element)
+{
+	EnsureTile(tile);
+	//UE_LOG(UtyProcessing, Warning, TEXT("Building element mesh representation"));
+
+	/*if (element.Styles["builders"].find("info") != element.Styles.end())
+	{
+		_placeElementBuilder->Build(tile, element);
+	}*/
+	_placeElementBuilder->SetActiveWorld(GetWorld());
+	_placeElementBuilder->SetCustomizationService(_customizationService);
+	_placeElementBuilder->Build(tile, element);
+}
+
+void ADemoModelBuilder::BuildMesh(ATile* tile, FMesh& mesh)
+{
+	EnsureTile(tile);
+	//UE_LOG(UtyProcessing, Warning, TEXT("Building mesh %s"), *mesh.Name);
+
+	TArray<FVector> UnrealNormals;
+	TArray<FRuntimeMeshTangent> UnrealTangents;
+
+	// Create a Mesh as a RuntimeMeshVertex array. needed for the additional uv channels
+	// no mesh visible even though its properly filled. Trying built in FRuntimeMeshVertexDualUV vertex type and a custom addition of the same
+	// template style with 3 UV channels. Using seperate vertices, tri, colors and uvs works!
+	TArray<FRuntimeMeshVertexDualUV> VerticesWithThreeUvs;
+	VerticesWithThreeUvs.AddUninitialized(mesh.Vertices.Num());
+	TArray<int32> Triangles;
+
+	for (int i = 0; i < mesh.Vertices.Num(); i++)
+	{
+		FRuntimeMeshVertexDualUV NewVert;
+		NewVert.Position = mesh.Vertices[i];
+		NewVert.Color = mesh.Colors[i];
+		NewVert.UV0 = mesh.Uvs[i];
+		NewVert.UV1 = mesh.Uvs2[i];
+		//NewVert.UV2 = mesh.Uvs3[i];
+		VerticesWithThreeUvs.Add(NewVert);
+	}
+
+	NewMesh->RuntimeMesh->CreateMeshSection(CurrentMeshSection, VerticesWithThreeUvs, mesh.Triangles); // , false, EUpdateFrequency::Infrequent, ESectionUpdateFlags::CalculateNormalTangent);
+	FBox SectionBoundingBox( *(tile->GetProjection()->Project(tile->GetBoundingBox()->MinPoint,-100.0 /* TODO: height needs proper data */)), *(tile->GetProjection()->Project(tile->GetBoundingBox()->MaxPoint, 10000.0)));
+
+	// Create the mesh section specifying the custom bounding box (also enables collision, and sets the section update frequency to infrequent)
+	NewMesh->RuntimeMesh->CreateMeshSection(CurrentMeshSection, VerticesWithThreeUvs, mesh.Triangles, SectionBoundingBox, false,EUpdateFrequency::Infrequent, ESectionUpdateFlags::None);
+
+/*  NewMesh->RuntimeMesh->GetMeshComponent()->CreateMeshSection(
+		CurrentMeshSection,
+		mesh.Vertices,
+		mesh.Triangles,
+		false,
+		EUpdateFrequency::Infrequent,
+		ESectionUpdateFlags::CalculateNormalTangent
+	);*/
+	
+	//UE_LOG(UtyProcessing, Warning, TEXT("Mesh %s built"), *mesh.Name);
+	// todo: catch renderstateDirty crash that I faced once
+
+	auto Material = _customizationService->GetSharedMaterial("Materials/M_Terrain_Textures_L16");
+	if (Material)
+	{
+		tile->GetMeshComponent()->SetMaterial(tile->GetMeshSectionIndex(), Material);
+	}
+	//gameObject.AddComponent<MeshRenderer>().sharedMaterial =
+	//	_customizationService.GetSharedMaterial(@"Materials/Default");
+	//		gameObject.AddComponent<MeshCollider>();
+	//gameObject.transform.parent = tile.GameObject.transform;
+}
+
+// Ensures that tile's game object is created.
+void ADemoModelBuilder::EnsureTile(ATile* tile)
+{
+	if (tile->GetMeshComponent() == nullptr) 
+		tile->SetMeshComponent(NewObject<URuntimeMeshComponent>());
+}
+
+void ADemoModelBuilder::SetActiveWorld(UWorld* World)
+{
+	ActiveWorld = World;
+	if (_placeElementBuilder)
+	{
+		_placeElementBuilder->SetActiveWorld(World);
+	}
+}

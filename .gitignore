@@ -343,3 +343,8 @@ __pycache__/
 build/
 
 # End of https://www.gitignore.io/api/unrealengine,visualstudio
+
+# Add compiled UtyMap version to project
+!Binaries/Win64/UtyMap.Shared.dll
+!Binaries/Win64/zlib.dll
+!Binaries/Win64/zlibd.dll

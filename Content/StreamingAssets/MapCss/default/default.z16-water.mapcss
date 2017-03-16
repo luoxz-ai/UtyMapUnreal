@@ -1,0 +1,22 @@
+canvas|z16 {
+    water-mesh-name: terrain_water;
+    water-max-area: 0.01%;
+    water-color-noise-freq: 100000;
+    water-ele-noise-freq: 100000;
+    water-color: gradient(#87cefa, #1e90ff);
+    water-height-offset:-1m;
+    water-texture-index: 0;
+    water-texture-type: water;
+    water-texture-scale: 100;
+}
+
+area,relation|z16[natural=water],
+area,relation|z16[landuse=basin],
+area,relation|z16[waterway=riverbank],
+area,relation|z16[waterway=dock],
+area,relation|z16[amenity=fountain],
+area,relation|z16[leisure=swimming_pool] {
+    clip:true;
+    builders: terrain;
+    terrain-layer: water;
+}

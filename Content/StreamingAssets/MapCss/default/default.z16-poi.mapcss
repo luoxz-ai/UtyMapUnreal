@@ -1,0 +1,311 @@
+/* Common declarations */
+node|z16[amenity],node|z16[tourism],node|z16[leisure],node|z16[man_made],node|z16[waste],
+node|z16[barrier],node|z16[shop],node|z16[wood],node|z16[religion],node|z16[boundary],
+node|z16[military],node|z16[historic],node|z16[place],node|z16[tower:type],node|z16[power_source],
+node|z16[power],node|z16[sport],node|z16[aeroway],node|z16[highway],node|z16[transport_helicopter],
+node|z16[junction=roundabout],node|z16[railway],node|z16[waterway] {
+    min-height:16;
+    material:info_icons;
+    builders:info;
+    width: 1104;
+    height: 1169;
+    rect:0_0_0_0;
+}
+
+node|z16[tourism=alpinehut]                           { rect:0_65_64_64; }
+node|z16[tourism=guest_house]                         { rect:325_780_64_64; }
+node|z16[tourism=camp_site]                           { rect:65_65_64_64;   }
+node|z16[tourism=caravan_site]                                    { rect:0_130_64_64;   }
+node|z16[tourism=chalet]                                            { rect:65_130_64_64;   }
+node|z16[tourism=hostel]                                            { rect:130_65_64_64;   }
+node|z16[tourism=hotel]                                                { rect:130_130_64_64;   }
+node|z16[tourism=motel]                                                { rect:65_195_64_64;   }
+node|z16[amenity=shelter]                                            { rect:130_195_64_64;   }
+
+node|z16[tourism=youth_hostel]                                    { rect:195_65_64_64;   }
+
+node|z16[amenity=bench]                                                { rect:195_130_64_64;   }
+node|z16[amenity=courthouse]                                    { rect:195_195_64_64;   }
+node|z16[amenity=fire_station]                                    { rect:0_260_64_64;   }
+node|z16[amenity=fountain]                                            { rect:195_260_64_64;   }
+node|z16[amenity=library]                                            { rect:260_65_64_64;   }
+node|z16[leisure=playground]                                    { rect:260_195_64_64;   }
+node|z16[amenity=police]                                            { rect:260_260_64_64;   }
+node|z16[amenity=post_box]                                            { rect:65_325_64_64;   }
+node|z16[amenity=post_office]                                    { rect:130_325_64_64;   }
+
+node|z16[amenity=prison]                                            { rect:195_325_64_64;   }
+node|z16[amenity=public_building]                            { rect:260_325_64_64;   }
+node|z16[amenity=recycling]                                            { rect:325_65_64_64;   }
+node|z16[man_made=survey_point]                                    { rect:325_130_64_64;   }
+node|z16[amenity=telephone]                                            { rect:325_195_64_64;   }
+node|z16[amenity=toilets]                                            { rect:325_260_64_64;   }
+
+node|z16[amenity=townhall]                                            { rect:130_390_64_64;   }
+
+node|z16[waste],
+node|z16[amenity=waste_basket]                    { rect:260_390_64_64;   }
+node|z16[barrier=bollard]                                            { rect:390_0_64_64;   }
+node|z16[barrier=cattle_grid]                                    { rect:390_65_64_64;   }
+node|z16[barrier=cycle_barrier]                                    { rect:390_130_64_64;   }
+node|z16[barrier=entrance]                                            { rect:390_195_64_64;   }
+node|z16[barrier=exit]                                                   { rect:390_260_64_64;   }
+node|z16[barrier=gate]                                                { rect:390_325_64_64;  }
+node|z16[barrier=kissing_gate]                                    { rect:390_390_64_64;   }
+node|z16[barrier=lift_gate]                                            { rect:0_455_64_64;   }
+node|z16[barrier=step]                                                { rect:65_455_64_64;   }
+node|z16[barrier=stile]                                                   { rect:130_455_64_64;   }
+node|z16[barrier=toll_booth]                                    { rect:195_455_64_64;   }
+node|z16[amenity=college]                                            { rect:260_455_64_64;   }
+
+node|z16[amenity=nursery]                                            { rect:390_455_64_64;   }
+
+node|z16[amenity=school]                                            { rect:455_130_64_64;   }
+
+node|z16[amenity=university]                                    { rect:455_325_64_64;   }
+node|z16[amenity=bar]                                                { rect:455_390_64_64;   }
+node|z16[amenity=biergarten]                                    { rect:455_455_64_64;   }
+node|z16[amenity=cafe]                                                { rect:0_520_64_64;   }
+node|z16[amenity=drinking_water]                            { rect:65_520_64_64;   }
+node|z16[amenity=fast_food]                                            { rect:130_520_64_64;   }
+
+node|z16[amenity=ice_cream]                                            { rect:325_520_64_64;   }
+node|z16[amenity=pizza]                                                { rect:390_520_64_64;   }
+node|z16[amenity=pub]                                                { rect:455_520_64_64;   }
+node|z16[amenity=restaurant]                                    { rect:520_0_64_64;   }
+node|z16[amenity=dentist]                                            { rect:520_65_64_64;   }
+node|z16[amenity=doctors]                                            { rect:520_130_64_64;   }
+node|z16[amenity=hospital]                                            { rect:520_195_64_64;   }
+
+node|z16[shop=optician]                                                { rect:520_455_64_64;   }
+node|z16[amenity=pharmacy]                                            { rect:520_520_64_64;   }
+
+node|z16[amenity=veterinary]                                    { rect:65_585_64_64;   }
+node|z16[wood=coniferous]                                            { rect:130_585_64_64;   }
+
+node|z16[landuse=deciduous]                                            { rect:260_585_64_64;   }
+node|z16[landuse=grass]                                                { rect:325_585_64_64;   }
+node|z16[landuse_hills]                                                { rect:390_585_64_64;   }
+node|z16[landuse=quary]                                                { rect:455_585_64_64;   }
+node|z16[landuse=scrub]                                                { rect:520_585_64_64;   }
+node|z16[landuse=swamp]                                                { rect:585_0_64_64;   }
+node|z16[amenity=atm]                                                { rect:585_65_64_64;   }
+
+node|z16[amenity=bank]                                                   { rect:585_195_64_64;   }
+
+node|z16[amenity=bureau_de_change]                            { rect:585_325_64_64;   }
+
+/* check also amenity=place_of_worship */
+node|z16[religion=bahai]                                            { rect:585_390_64_64;   }
+node|z16[religion=buddhist]                                            { rect:585_520_64_64;   }
+node|z16[religion=christian]                                    { rect:0_650_64_64;   }
+node|z16[religion=hindu]                                            { rect:130_650_64_64;   }
+node|z16[religion=islamic]                                            { rect:260_650_64_64;   }
+node|z16[religion=jain]                                                { rect:390_650_64_64;   }
+node|z16[religion=jewish]                                            { rect:520_650_64_64;   }
+node|z16[religion=shinto]                                            { rect:650_0_64_64;   }
+node|z16[religion=sikh]                                                { rect:650_130_64_64;   }
+node|z16[religion=unknown]                                            { rect:650_260_64_64;   }
+
+node|z16[boundary=administrative]                            { rect:650_390_64_64;   }
+node|z16[natural=cave_entrance]                            { rect:650_455_64_64;   }
+node|z16[man_made=crane]                                            { rect:650_520_64_64;   }
+node|z16[amenity=embassy]                                            { rect:650_585_64_64;   }
+
+node|z16[military=bunker]                                            { rect:0_715_64_64;   }
+node|z16[historic=mine]                                                { rect:65_715_64_64;   }
+
+node|z16[mountain_pass]                                                { rect:195_715_64_64;   }
+node|z16[natural=peak]                                                { rect:260_715_64_64;   }
+
+node|z16[place=city]                                                { rect:390_715_64_64;   }
+node|z16[place=hamlet]                                                { rect:455_715_64_64;   }
+node|z16[place=suburb]                                                { rect:520_715_64_64;   }
+node|z16[place=town]                                                   { rect:585_715_64_64;   }
+node|z16[place=village]                                                   { rect:650_715_64_64;   }
+
+node|z16[man_made=communications_tower]                        { rect:715_65_64_64;   }
+node|z16[tower:type=observation]                                { rect:715_130_64_64;   }
+node|z16[power=tower]                                                { rect:715_195_64_64;   }
+node|z16[man_made=water_tower]                                    { rect:715_260_64_64;   }
+
+/*Not sure here*/
+node|z16[power_source=coal]                                            { rect:715_325_64_64;   }
+node|z16[power_source=gas]                                            { rect:715_390_64_64;   }
+node|z16[power_source=solar]                                    { rect:715_455_64_64;   }
+node|z16[power_source=water]                                    { rect:715_520_64_64;   }
+node|z16[power_source=wind]                                            { rect:715_585_64_64;   }
+node|z16[power=substation]                                            { rect:715_650_64_64;   }
+
+node|z16[power=transformer]                                            { rect:130_780_64_64;   }
+node|z16[shop=alcohol]                                                   { rect:195_780_64_64;   }
+node|z16[shop=bakery]                                                { rect:260_780_64_64;   }
+node|z16[shop=bicycle]                                                   { rect:0_0_64_64;   }
+node|z16[shop=book]                                                       { rect:390_780_64_64;   }
+node|z16[shop=butcher]                                                { rect:455_780_64_64;   }
+
+node|z16[shop=car]                                                    { rect:585_780_64_64;   }
+node|z16[shop=car_repair]                                            { rect:650_780_64_64;   }
+node|z16[shop=clothes]                                                { rect:715_780_64_64;   }
+node|z16[shop=computer]                                                { rect:780_0_64_64;   }
+node|z16[shop=confectionery]                                    { rect:780_65_64_64;   }
+node|z16[shop=convenience]                                            { rect:780_130_64_64;   }
+node|z16[shop=copyshop]                                                { rect:780_195_64_64;   }
+node|z16[shop=department_store]                                    { rect:780_260_64_64;   }
+node|z16[shop=doityourself]                                            { rect:780_325_64_64;   }
+node|z16[shop=cestateagent]                                            { rect:780_390_64_64;   }
+
+node|z16[shop=fish]                                                    { rect:780_585_64_64;   }
+node|z16[shop=florist]                                                { rect:780_650_64_64;   }
+node|z16[shop=garden_centre]                                    { rect:780_715_64_64;   }
+node|z16[shop=gift]                                                    { rect:780_780_64_64;   }
+node|z16[shop=greengrocer]                                            { rect:0_845_64_64;   }
+node|z16[shop=hairdresser]                                            { rect:65_845_64_64;   }
+node|z16[shop=hearing_aids]                                            { rect:130_845_64_64;   }
+node|z16[shop=hifi]                                                    { rect:195_845_64_64;   }
+node|z16[shop=jewelry]                                                { rect:260_845_64_64;   }
+
+node|z16[shop=kiosk]                                                { rect:390_845_64_64;   }
+node|z16[shop=laundrette]                                            { rect:455_845_64_64;   }
+node|z16[amenity=marketplace]                                    { rect:520_845_64_64;   }
+node|z16[shop=mobile_phone]                                            { rect:585_845_64_64;   }
+node|z16[shop=motorcycle]                                            { rect:650_845_64_64;   }
+node|z16[shop=music]                                                { rect:715_845_64_64;   }
+node|z16[shop=newsagent]                                            { rect:780_845_64_64;   }
+node|z16[shop=pet]                                                    { rect:845_0_64_64;   }
+
+node|z16[shop=photo]                                                { rect:845_130_64_64;   }
+node|z16[shop=supermarket]                                            { rect:845_195_64_64;   }
+node|z16[shop=tackle]                                                { rect:845_260_64_64;   }
+node|z16[shop=tobacco]                                                { rect:845_325_64_64;   }
+node|z16[shop=toys]                                                    { rect:845_390_64_64;   }
+node|z16[amenity=vending_machine]                                { rect:845_455_64_64;   }
+node|z16[shop=video]                                                { rect:845_520_64_64;   }
+
+node|z16[sport=archery]                                                   { rect:845_585_64_64;   }
+node|z16[sport=baseball]                                            { rect:845_650_64_64;   }
+node|z16[sport=canoe]                                                   { rect:845_715_64_64;   }
+node|z16[sport=cricket]                                                   { rect:845_780_64_64;   }
+node|z16[sport=diving]                                                { rect:845_845_64_64;   }
+node|z16[sport=golf]                                                { rect:0_910_64_64;   }
+node|z16[amenity=gym]                                                { rect:65_910_64_64;   }
+node|z16[sport=gymnasium]                                            { rect:130_910_64_64;   }
+node|z16[sport=climbing]                                            { rect:260_910_64_64;   }
+node|z16[sport=horse_racing]                                    { rect:325_910_64_64;   }
+node|z16[sport=skating]                                                { rect:390_910_64_64;   }
+node|z16[sport=jetski]                                                { rect:455_910_64_64;   }
+node|z16[leisure=sports_centre]                                    { rect:520_910_64_64;   }
+node|z16[leisure=miniature_golf]                            { rect:585_910_64_64;   }
+node|z16[sport=motor]                                                { rect:650_910_64_64;   }
+node|z16[leisure=playground]                                 { rect:715_910_64_64;   }
+node|z16[sport=sailing]                                                { rect:780_910_64_64;   }
+node|z16[sport=shooting]                                            { rect:845_910_64_64;   }
+
+node|z16[sport=snooker]                                                { rect:910_130_64_64;   }
+node|z16[sport=soccer]                                                { rect:910_195_64_64;   }
+node|z16[leisure=stadium]                                            { rect:910_260_64_64;   }
+
+node|z16[sport=tennis]                                                { rect:910_455_64_64;   }
+
+node|z16[historic=archaeological_site]                        { rect:910_585_64_64;   }
+node|z16[tourism=gallery]                                            { rect:910_715_64_64;   }
+node|z16[tourism=attraction]                                { rect:910_845_64_64;   }
+node|z16[historic=battlefield]                                      { rect:910_910_64_64;   }
+
+node|z16[amenity=casino]                                            { rect:65_975_64_64;   }
+node|z16[historic=castle]                                            { rect:130_975_64_64;   }
+node|z16[amenity=cinema]                                            { rect:260_975_64_64;   }
+node|z16[amenity=clock]                                                { rect:390_975_64_64;   }
+node|z16[amenity=fountain]                                            { rect:455_975_64_64;   }
+node|z16[information=guidepost]                                    { rect:520_975_64_64;   }
+node|z16[tourism=information]                                    { rect:585_975_64_64;   }
+
+node|z16[historic=memorial]                                            { rect:715_975_64_64;   }
+node|z16[historic=monument]                                            { rect:780_975_64_64;  }
+node|z16[tourism=museum]                                            { rect:845_975_64_64;   }
+node|z16[tourism=picnic_site]                                    { rect:910_975_64_64;   }
+node|z16[historic=ruins]                                            { rect:975_0_64_64;   }
+
+node|z16[amenity=theatre ]                                            { rect:975_130_64_64;   }
+node|z16[tourism=theme_park]                                        { rect:975_195_64_64;   }
+node|z16[tourism=viewpoint]                                            { rect:975_260_64_64;   }
+
+node|z16[historic=wayside_cross]                            { rect:975_390_64_64;   }
+node|z16[historic=wayside_shrine]                            { rect:975_455_64_64;   }
+node|z16[man_made=windmill]                                            { rect:975_520_64_64;   }
+node|z16[historic=wreck]                                            { rect:975_585_64_64;   }
+node|z16[tourism=zoo]                                                { rect:975_650_64_64;   }
+node|z16[aeroway=aerodrome]                                            { rect:975_715_64_64;   }
+node|z16[aeroway=airport]                                            { rect:975_845_64_64;   }
+node|z16[aeroway=gate]                                                { rect:975_910_64_64;   }
+node|z16[aeroway=terminal]                                            { rect:975_975_64_64;  }
+node|z16[amenity=bus_station]                                    { rect:65_1040_64_64;   }
+node|z16[highway=bus_stop]                                            { rect:130_1040_64_64;   }
+node|z16[amenity=car_sharing]                                    { rect:260_1040_64_64;   }
+node|z16[emergency=phone]                                            { rect:325_1040_64_64;   }
+node|z16[highway=ford]                                                { rect:390_1040_64_64;   }
+node|z16[amenity=fuel]                                                { rect:455_1040_64_64;   }
+
+node|z16[transport_helicopter]                                    { rect:585_1040_64_64;   }
+node|z16[aeroway=helipad]                                            { rect:650_1040_64_64;   }
+node|z16[man_made=lighthouse]                                    { rect:715_1040_64_64;   }
+
+node|z16[highway=mini_roundabout]                            { rect:910_1040_64_64;   }
+node|z16[amenity=parking]                                            { rect:975_1040_64_64;   }
+node|z16[amenity=bicycle_parking]                            { rect:1040_0_64_64;   }
+
+node|z16[landuse=port]                                                { rect:1040_455_64_64;   }
+node|z16[amenity=bicycle_rental]                            { rect:1040_520_64_64;   }
+node|z16[amenity=car_rental]                                    { rect:1040_585_64_64;  }
+
+node|z16[junction=roundabout]                                    { rect:1040_715_64_64;   }
+node|z16[leisure=slipway]                                            { rect:1040_780_64_64;   }
+
+node|z16[railway=subway_entrance]                            { rect:1040_910_64_64;   }
+node|z16[amenity=taxi]                                                { rect:1040_975_64_64;   }
+node|z16[highway=traffic_signals]                            { rect:1040_1040_64_64;   }
+node|z16[railway=station]                                            { rect:0_1105_64_64;   }
+node|z16[railway=tram_stop]                                            { rect:130_1105_64_64;   }
+node|z16[highway=turning_circle]                            { rect:195_1105_64_64;   }
+node|z16[highway=path]                                                { rect:260_1105_64_64;   }
+node|z16[highway=crossing]                                            { rect:325_1105_64_64;   }
+node|z16[waterway=dam]                                                { rect:390_1105_64_64;   }
+node|z16[man_made=water_tower]                                    { rect:455_1105_64_64;   }
+node|z16[waterway=weir]                                                { rect:520_1105_64_64;   }
+
+
+way,relation|z16[natural=tree_row],
+node|z16[natural=tree] {
+    builders: tree;
+    clip: true;
+    tree-step: 10m;
+    foliage-color: gradient(#80c34c, #406126 50%, #101809);
+    foliage-radius: 2.5m;
+    foliage-texture-index: 0;
+    foliage-texture-type: tree;
+    foliage-texture-scale: 50;
+
+    trunk-color: gradient(#f4a460, #614126 50%, #302013);
+    trunk-radius: 0.3m;
+    trunk-height: 1.5m;
+    trunk-texture-index: 0;
+    trunk-texture-type: background;
+    trunk-texture-scale: 200;
+}
+
+node|z16[highway=street_lamp] {
+    builders: lamp;
+
+    lamp-light-color: gradient(yellow);
+    lamp-light-radius: 0.4m;
+    lamp-light-texture-index: 0;
+    lamp-light-texture-type: background;
+    lamp-light-texture-scale: 50;
+
+    lamp-pillar-color: gradient(black);
+    lamp-pillar-radius: 0.1m;
+    lamp-pillar-height: 8m;
+    lamp-pillar-texture-index: 0;
+    lamp-pillar-texture-type: background;
+    lamp-pillar-texture-scale: 200;
+}

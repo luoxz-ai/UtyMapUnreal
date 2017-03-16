@@ -1,0 +1,102 @@
+canvas|z16 {
+    drive-mesh-name: terrain_drive;
+    drive-max-area: 5%;
+    drive-color-noise-freq: 0.1;
+    drive-ele-noise-freq: 0;
+    drive-color: gradient(#4d4d4d);
+    drive-height-offset:-0.2m;
+    drive-texture-index: 0;
+    drive-texture-type: drive;
+    drive-texture-scale: 10;
+
+    pedestrian-mesh-name: terrain_pedestrian;
+    pedestrian-max-area: 5%;
+    pedestrian-color-noise-freq: 0.1;
+    pedestrian-ele-noise-freq: 0.05;
+    pedestrian-color: gradient(#636363);
+    pedestrian-height-offset:0.05m;
+    pedestrian-texture-index: 0;
+    pedestrian-texture-type: pedestrian;
+    pedestrian-texture-scale: 200;
+}
+
+way|z16[highway] {
+    clip:true;
+    builders: terrain,lamp;
+    terrain-layer: pedestrian;
+    width: 1m;
+
+    lamp-step: 30m;
+    lamp-light-color: gradient(yellow);
+    lamp-light-radius: 0.4m;
+    lamp-light-texture-index: 0;
+    lamp-light-texture-type: background;
+    lamp-light-texture-scale: 50;
+
+    lamp-pillar-color: gradient(black);
+    lamp-pillar-radius: 0.1m;
+    lamp-pillar-height: 8m;
+    lamp-pillar-texture-index: 0;
+    lamp-pillar-texture-type: background;
+    lamp-pillar-texture-scale: 200;
+}
+
+way|z16[highway=path][foot=designated] {
+    terrain-layer: pedestrian;
+    width: 1m;
+}
+way|z16[highway=service] {
+    terrain-layer: drive;
+    width: 2.5m;
+}
+way|z16[highway=footway] {
+    terrain-layer: pedestrian;
+    width: 1m;
+}
+
+way|z16[highway=tertiary],
+way|z16[highway=residential],
+way|z16[highway=unclassified],
+way|z16[highway=road] {
+    terrain-layer: drive;
+    width: 4.5m;
+}
+way|z16[highway=living_street] {
+    width: 4m;
+}
+way|z16[highway=trunk],
+way|z16[highway=trunk_link],
+way|z16[highway=primary],
+way|z16[highway=primary_link],
+way|z16[highway=motorway],
+way|z16[highway=motorway_link] {
+    terrain-layer: drive;
+    width: 4m;
+}
+way|z16[highway=secondary],
+way|z16[highway=secondary_link] {
+    terrain-layer: drive;
+    width: 3.5m;
+}
+way|z16[highway=tertiary],
+way|z16[highway=tertiary_link] {
+    terrain-layer: drive;
+    width: 4m;
+}
+
+way|z16[highway][lanes] {
+    width: eval("tag('lanes') * 2");
+    dimension: 1m;
+}
+
+way|z16[highway][lanes>1] {
+    builders: terrain,lamp,lane;
+
+    lane-height:0.01m;
+    lane-width: 0.1m;
+    lane-length: 2m;
+    lane-color: gradient(white);
+    lane-texture-index: 0;
+    lane-texture-type: background;
+    lane-texture-scale: 200;
+}

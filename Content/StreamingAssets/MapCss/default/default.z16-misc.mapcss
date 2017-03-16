@@ -1,0 +1,41 @@
+relation|z16[type=multipolygon] {
+    multipolygon: true;
+}
+
+node|z16[barrier=block] {
+    builders: barrier;
+    color: gradient(#c0c0c0);
+    radius: 0.2m;
+    height: 1m;
+    texture-index: 0;
+    texture-type: barrier;
+    texture-scale: 200;
+}
+
+way,area,relation|z16[barrier] {
+    clip:true;
+    builders: barrier;
+    color: gradient(#c0c0c0);
+    texture-index: 0;
+    texture-type: barrier;
+    texture-scale: 115;
+
+    height: 1.8m;
+    width: 0.05m;
+    length: 3m;
+    gap: 0.05m;
+}
+
+way,area,relation|z16[barrier=hedge] {
+    color: gradient(#80c34c, #406126 50%, #101809);
+    texture-type: grass;
+    width: 0.2m;
+    gap: 0;
+}
+
+way,area,relation|z16[barrier=kerb] {
+    texture-type: background;
+    height: 0.2m;
+    width: 0.1m;
+    length: 0.5m;
+}

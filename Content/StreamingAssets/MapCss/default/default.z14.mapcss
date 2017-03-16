@@ -1,0 +1,11 @@
+canvas|z14 {
+    layer-priority: drive,water,green;
+}
+
+@import url("default.z14-lines.mapcss");
+@import url("default.z14-polygons.mapcss");
+
+/* See https://github.com/tilezen/vector-datasource/issues/735 */
+way,relation|z14[kind=riverbank][boundary=true] {
+    skip:true;
+}

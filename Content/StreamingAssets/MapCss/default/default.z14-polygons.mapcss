@@ -1,0 +1,77 @@
+canvas|z14 {
+    grid-cell-size: 5%;
+    max-area: 0%;
+    color-noise-freq: 0;
+    ele-noise-freq: 0;
+    color: gradient(#d4d4d4);
+    texture-index: 0;
+    texture-type: background;
+    texture-scale: 100;
+
+    water-mesh-name: terrain_water;
+    water-max-area: 0%;
+    water-color-noise-freq: 0;
+    water-ele-noise-freq: 0;
+    water-color: gradient(#87cefa);
+    water-texture-index: 0;
+    water-texture-type: water;
+    water-texture-scale: 100;
+
+    green-mesh-name: terrain_green;
+    green-max-area: 0%;
+    green-color-noise-freq: 0;
+    green-ele-noise-freq: 0;
+    green-color: gradient(#55ab2f);
+    green-texture-index: 0;
+    green-texture-type: grass;
+    green-texture-scale: 100;
+}
+
+area,relation|z14[kind=water],
+area,relation|z14[kind=river],
+area,relation|z14[kind=riverbank],
+area,relation|z14[natural=water],
+area,relation|z14[landuse=basin],
+area,relation|z14[waterway=riverbank],
+area,relation|z14[waterway=dock],
+area,relation|z14[amenity=fountain],
+area,relation|z14[leisure=swimming_pool] {
+    clip:true;
+    builders: terrain;
+    terrain-layer: water;
+}
+
+area,relation|z14[kind=field],
+area,relation|z14[kind=brownfield],
+area,relation|z14[kind=landfill],
+area,relation|z14[kind=greenfield],
+area,relation|z14[kind=park],
+area,relation|z14[kind=recreation_ground],
+area,relation|z14[kind=garden],
+area,relation|z14[kind=wood],
+area,relation|z14[kind=forest],
+area,relation|z14[kind=farmland],
+area,relation|z14[kind=scrub],
+area,relation|z14[kind=village_green],
+area,relation|z14[kind=grass],
+area,relation|z14[kind=meadow],
+
+area,relation|z14[landuse=field],
+area,relation|z14[natural=field],
+area,relation|z14[landuse=brownfield],
+area,relation|z14[landuse=landfill],
+area,relation|z14[landuse=greenfield],
+area,relation|z14[leisure=park],
+area,relation|z14[leisure=recreation_ground],
+area,relation|z14[leisure=garden],
+area,relation|z14[natural=wood],
+area,relation|z14[landuse=forest],
+area,relation|z14[landuse=farmland],
+area,relation|z14[landuse=scrub],
+area,relation|z14[landuse=village_green],
+area,relation|z14[landuse=grass],
+area,relation|z14[landuse=meadow] {
+    clip:true;
+    builders: terrain;
+    terrain-layer: green;
+}

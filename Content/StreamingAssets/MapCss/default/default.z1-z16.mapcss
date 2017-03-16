@@ -1,0 +1,6 @@
+/* Ignore all objects under surface. */
+node,area,way,relation|z1-16[level<0],
+node,area,way,relation|z1-16[layer<0],
+area,relation|z1-16[man_made!=bridge][layer<0] {
+    skip:true;
+}

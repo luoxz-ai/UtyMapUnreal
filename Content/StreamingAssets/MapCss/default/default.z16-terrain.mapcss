@@ -1,0 +1,164 @@
+canvas|z16 {
+    grid-cell-size: 5%;
+    max-area: 0.1%;
+    color-noise-freq: 100000;
+    ele-noise-freq: 7500;
+    color: gradient(#dcdcdc 0%, #c0c0c0 10%, #a9a9a9 50%, #808080);
+
+    texture-index: 0;
+    texture-type: background;
+    texture-scale: 100;
+
+    bridge-mesh-name: terrain_bridges;
+    bridge-max-area: 5%;
+    bridge-color-noise-freq: 0.1;
+    bridge-ele-noise-freq: 0.05;
+    bridge-color: gradient(#636363);
+    bridge-height-offset:0.05m;
+    bridge-texture-index: 0;
+    bridge-texture-type: drive;
+    bridge-texture-scale: 200;
+}
+
+area,relation|z16[amenity],
+area,relation|z16[natural!=coastline],
+area,relation|z16[leisure],
+area,relation|z16[historic=memorial],
+area,relation|z16[landuse] {
+    clip:true;
+    builders: terrain;
+    max-area: 0.02%;
+    color-noise-freq: 100000;
+    ele-noise-freq: 7500;
+    color: gradient(red);
+    mesh-name: terrain_generic;
+
+    texture-index: 0;
+    texture-type: background;
+    texture-scale: 50;
+}
+
+area,relation|z16[landuse=garages],
+area,relation|z16[landuse=barracks],
+area,relation|z16[landuse=residential] {
+    color: gradient(#a9a9a9, #707070 70%, #556b2f);
+}
+area,relation|z16[landuse=cemetery],
+area,relation|z16[landuse=grave_yard],
+area,relation|z16[amenity=grave_yard] {
+    color: gradient(#98fb98, #064807 10%, #035804 50%, #808080);
+}
+area,relation|z16[landuse=farm],
+area,relation|z16[landuse=farmland] {
+    color: gradient(#15ffcd, #0ead8b 50%, #064739);
+}
+area,relation|z16[landuse=commercial] {
+    color: gradient(#999999, #606060);
+}
+area,relation|z16[landuse=retail] {
+    color: gradient(#162bff, #0f1dad 50%, #060c47);
+}
+area,relation|z16[landuse=field],
+area,relation|z16[natural=field],
+area,relation|z16[landuse=brownfield],
+area,relation|z16[landuse=landfill],
+area,relation|z16[landuse=greenfield] {
+    color: gradient(#fcdd76, #f4a460 20%, #406126);
+    texture-type: grass;
+}
+area,relation|z16[landuse=construction] {
+    color: gradient(#fcdd76, #f4a460 40%, #707070);
+    texture-type: grass;
+}
+area,relation|z16[amenity=parking_space],
+area,relation|z16[amenity=parking] {
+    color: gradient(#c0c0c0, #999999 40%, #707070);
+}
+area,relation|z16[leisure=stadium],
+area,relation|z16[leisure=playground],
+area,relation|z16[natural=sand],
+area,relation|z16[natural=beach] {
+    color: gradient(#fcdd76, #f4a460);
+}
+area,relation|z16[amenity=university],
+area,relation|z16[amenity=college],
+area,relation|z16[amenity=school],
+area,relation|z16[amenity=hospital],
+area,relation|z16[amenity=kindergarten] {
+    color: gradient(#fcdd76, #a9a9a9 20%, #909090 70%, #556b2f);
+}
+
+area,relation|z16[landuse=government],
+area,relation|z16[landuse=industrial],
+area,relation|z16[landuse=railway] {
+    color: gradient(#7d7d7d, #707070);
+}
+area,relation|z16[leisure=track],
+area,relation|z16[leisure=pitch],
+area,relation|z16[leisure=park],
+area,relation|z16[landuse=recreation_ground],
+area,relation|z16[leisure=recreation_ground],
+area,relation|z16[leisure=garden] {
+    color: gradient(#98fb98, #adff2f 5%, #006400 10%, #556b2f 80%, #b8860b);
+    texture-type: grass;
+
+    mesh-extras: forest;
+    mesh-name: terrain_park;
+    tree-frequency: 60;
+    tree-chunk-size: 30;
+
+    foliage-color: gradient(#80c34c, #406126 50%, #101809);
+    foliage-radius: 2.5m;
+    foliage-texture-index: 0;
+    foliage-texture-type: tree;
+    foliage-texture-scale: 50;
+
+    trunk-color: gradient(#f4a460, #614126 50%, #302013);
+    trunk-radius: 0.3m;
+    trunk-height: 1.5m;
+    trunk-texture-index: 0;
+    trunk-texture-type: background;
+    trunk-texture-scale: 200;
+}
+area,relation|z16[natural=wood],
+area,relation|z16[leisure=nature_reserve],
+area,relation|z16[landuse=orchard],
+area,relation|z16[landuse=forest] {
+    color: gradient(#98fb98, #064807 10%, #032804 50%, #b8860b);
+
+    mesh-extras: forest;
+    mesh-name: terrain_forest;
+    tree-frequency: 10;
+    tree-chunk-size: 30;
+    texture-type: grass;
+
+    foliage-color: gradient(#80c34c, #406126 50%, #101809);
+    foliage-radius: 2.5m;
+    foliage-texture-index: 0;
+    foliage-texture-type: tree;
+    foliage-texture-scale: 50;
+
+    trunk-color: gradient(#f4a460, #614126 50%, #302013);
+    trunk-radius: 0.3m;
+    trunk-height: 1.5m;
+    trunk-texture-index: 0;
+    trunk-texture-type: background;
+    trunk-texture-scale: 200;
+}
+area,relation|z16[landuse=farmland],
+area,relation|z16[landuse=scrub] {
+    color: gradient(#adff2f, #006400 30%, #556b2f 90%, #b8860b);
+    texture-type: grass;
+}
+area,relation|z16[landuse=village_green],
+area,relation|z16[landuse=grass],
+area,relation|z16[landuse=meadow] {
+    color: gradient(#adff2f, #006400 30%, #556b2f 90%, #b8860b);
+    texture-type: grass;
+}
+
+area,relation|z16[man_made=bridge] {
+    clip:true;
+    builders: terrain;
+    terrain-layer: bridge;
+}
