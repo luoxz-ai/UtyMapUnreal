@@ -1,5 +1,3 @@
-// Copyright is held by Continental and the author Max Seidenstuecker
-
 using UnrealBuildTool;
 using System.Collections.Generic;
 
